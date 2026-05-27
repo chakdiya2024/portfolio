@@ -9,7 +9,7 @@ export function Navigation() {
         <div className={styles.avatar}>
           <Image
             className={styles.avatarImage}
-            src="/avatar.png"
+            src="/avatar.webp"
             alt="Portrait of Diya Chakraborti"
             width={78}
             height={78}
