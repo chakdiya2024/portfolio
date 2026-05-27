@@ -1,0 +1,90 @@
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-project);
+  width: 100%;
+}
+
+.media {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background: var(--color-project-surface);
+}
+
+.mediaImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.mediaOverlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(720px, 72%);
+  aspect-ratio: 573 / 406;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mediaOverlayAsset {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+  border-radius: 8px;
+}
+
+.mediaOverlayVideo {
+  --crop-top: 2px;
+  --crop-right: 3px;
+  --crop-bottom: 2px;
+  --crop-left: 4px;
+  clip-path: inset(
+    var(--crop-top)
+    var(--crop-right)
+    var(--crop-bottom)
+    var(--crop-left)
+    round 8px
+  );
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-text);
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  word-break: break-word;
+}
+
+.title {
+  color: var(--color-text);
+}
+
+.meta {
+  color: var(--color-text-muted);
+}
+
+.interactive {
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.interactive:hover .title,
+.interactive:focus-visible .title {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.interactive:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}

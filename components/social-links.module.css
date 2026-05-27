@@ -1,0 +1,75 @@
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  overflow: visible;
+}
+
+.link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  padding: 8px 12px;
+  border-radius: 30px;
+  background: var(--color-social-pill);
+  color: var(--color-text);
+  transition: background 0.15s ease;
+  overflow: visible;
+}
+
+.link[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.25;
+  white-space: nowrap;
+  color: var(--color-bg);
+  background: var(--color-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.12s ease,
+    visibility 0.12s ease;
+  z-index: 20;
+}
+
+.link[data-tooltip]:hover::after,
+.link[data-tooltip]:focus-visible::after,
+.copied::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link[data-tooltip]::after {
+    transition: none;
+  }
+}
+
+.link:hover {
+  background: var(--color-social-pill-hover);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+.link svg,
+.link span[aria-hidden] {
+  display: block;
+  flex-shrink: 0;
+}
