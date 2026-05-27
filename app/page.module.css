@@ -19,6 +19,16 @@
   overflow-y: auto;
 }
 
+.projectRow {
+  display: flex;
+  gap: 32px;
+}
+
+.projectRow > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
 @media (max-width: 900px) {
   .home {
     flex-direction: column;
@@ -30,5 +40,10 @@
   .content {
     overflow-y: visible;
     padding-top: 0;
+  }
+
+  .projectRow {
+    flex-direction: column;
+    gap: var(--space-content);
   }
 }

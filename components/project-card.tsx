@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Project } from "@/lib/projects";
+import { BackgroundVideo } from "./background-video";
 import styles from "./project-card.module.css";
 
 type ProjectCardProps = {
@@ -9,20 +10,37 @@ type ProjectCardProps = {
 export function ProjectCard({ project }: ProjectCardProps) {
   const body = (
     <>
-      <div className={styles.media} aria-hidden>
+      <div
+        className={[
+          styles.media,
+          project.size === "small" ? styles.mediaSmall : "",
+          project.backgroundVideo ? styles.mediaNoBackground : "",
+        ].filter(Boolean).join(" ")}
+        aria-hidden
+      >
+        {project.backgroundVideo ? (
+          <BackgroundVideo src={project.backgroundVideo} scale={project.backgroundVideoScale} />
+        ) : null}
         {project.backgroundImage ? (
           <Image
             className={styles.mediaImage}
             src={project.backgroundImage}
             alt=""
             fill
-            sizes="(max-width: 900px) 100vw, calc(100vw - 360px)"
+            sizes={
+              project.size === "small"
+                ? "(max-width: 900px) 100vw, calc((100vw - 360px - 32px) / 2)"
+                : "(max-width: 900px) 100vw, calc(100vw - 360px)"
+            }
             priority
             unoptimized
           />
         ) : null}
         {project.mediaOverlayImage || project.mediaVideo ? (
-          <div className={styles.mediaOverlay}>
+          <div
+            className={styles.mediaOverlay}
+            style={project.overlayAspectRatio ? { "--overlay-aspect-ratio": project.overlayAspectRatio } as React.CSSProperties : undefined}
+          >
             {project.mediaVideo ? (
               <video
                 className={`${styles.mediaOverlayAsset} ${styles.mediaOverlayVideo}`}
