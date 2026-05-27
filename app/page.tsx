@@ -31,11 +31,11 @@ export default function Home() {
           Array.isArray(row) ? (
             <div key={i} className={styles.projectRow}>
               {row.map((p) => (
-                <ProjectCard key={p.title} project={p} />
+                <ProjectCard key={p.title} project={p} index={i} />
               ))}
             </div>
           ) : (
-            <ProjectCard key={row.title} project={row} />
+            <ProjectCard key={row.title} project={row} index={i} />
           )
         )}
       </main>

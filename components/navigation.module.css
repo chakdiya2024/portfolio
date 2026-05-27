@@ -1,5 +1,17 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .nav {
   position: sticky;
+  animation: fadeIn 0.5s ease both;
   top: 0;
   align-self: flex-start;
   flex: 0 0 var(--nav-width);

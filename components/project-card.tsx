@@ -5,9 +5,10 @@ import styles from "./project-card.module.css";
 
 type ProjectCardProps = {
   project: Project;
+  index?: number;
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const body = (
     <>
       <div
@@ -72,16 +73,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
     </>
   );
 
+  const animStyle = { "--i": index } as React.CSSProperties;
+
   if (project.href) {
     return (
       <a
         className={`${styles.project} ${styles.interactive}`}
         href={project.href}
+        style={animStyle}
       >
         {body}
       </a>
     );
   }
 
-  return <article className={styles.project}>{body}</article>;
+  return <article className={styles.project} style={animStyle}>{body}</article>;
 }
