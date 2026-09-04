@@ -40,6 +40,8 @@ export const projects: Project[] = [
     title: 'Accessible text-to-911 redesign that saved 145+ lives',
     meta: 'AccesSOS • Shipped 2023',
     backgroundImage: '/projects/project-3-background.webp',
+    mediaOverlayImage: '/projects/project-3-mockup.png',
+    overlayAspectRatio: '864 / 874',
   },
   {
     title: 'Classical Piano Player',
