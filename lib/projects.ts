@@ -37,7 +37,7 @@ export const projects: Project[] = [
     mediaVideoPoster: '/projects/project-2-mockup.png',
   },
   {
-    title: 'Accessible text-to-911 redesign that saved 145+ lives',
+    title: 'Accessible text-to-911 redesign that saved 200+ lives',
     meta: 'AccesSOS • Shipped 2023',
     backgroundImage: '/projects/project-3-background.webp',
     mediaOverlayImage: '/projects/project-3-mockup.png',
