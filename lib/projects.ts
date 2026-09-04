@@ -41,7 +41,7 @@ export const projects: Project[] = [
     meta: 'AccesSOS • Shipped 2023',
     backgroundImage: '/projects/project-3-background.webp',
     mediaOverlayImage: '/projects/project-3-mockup.png',
-    overlayAspectRatio: '864 / 874',
+    overlayAspectRatio: '1312 / 874',
   },
   {
     title: 'Classical Piano Player',
