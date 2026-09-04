@@ -44,6 +44,7 @@ export const projects: Project[] = [
   {
     title: 'Classical Piano Player',
     meta: 'Cursor • Concept 2026',
+    href: 'https://chakdiya.vercel.app/digital-piano',
     size: 'small',
     backgroundVideo: '/projects/piano.mp4',
     backgroundVideoScale: 1.2,
@@ -51,6 +52,7 @@ export const projects: Project[] = [
   {
     title: 'Digital Bookshelf',
     meta: 'Cursor • Concept 2026',
+    href: 'https://chakdiya.vercel.app/screen-time',
     size: 'small',
     backgroundVideo: '/projects/screen-time-demo.mp4',
   },
