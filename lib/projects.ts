@@ -22,7 +22,7 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'Launching the “VisaGPT” for 450K+ clients worldwide',
+    title: 'Launching Visa’s first GenAI product for clients in 197 countries',
     meta: 'Visa 2025',
     backgroundImage: '/projects/project-1-background.webp',
     mediaOverlayImage: '/projects/visa-assist.webp',
