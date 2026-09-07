@@ -61,6 +61,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
                 fill
                 sizes="(max-width: 900px) 86vw, min(720px, 62vw)"
                 unoptimized
+                priority
               />
             ) : null}
           </div>
