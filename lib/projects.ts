@@ -23,14 +23,14 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'Launching the “VisaGPT” for 450K+ clients worldwide',
-    meta: 'Visa • Shipped 2025',
+    meta: 'Visa 2025',
     backgroundImage: '/projects/project-1-background.webp',
     mediaOverlayImage: '/projects/visa-assist.webp',
     overlayAspectRatio: '2280 / 1356',
   },
   {
     title: 'Designing a fraud investigation platform from 0 → 1',
-    meta: 'Visa • Shipped 2024',
+    meta: 'Visa 2024',
     backgroundImage: '/projects/project-2-background.webp',
     mediaOverlayImage: '/projects/project-2-mockup.png',
     mediaVideo: '/projects/project-2-mockup.mp4',
@@ -38,14 +38,14 @@ export const projects: Project[] = [
   },
   {
     title: 'Accessible text-to-911 redesign that saved 200+ lives',
-    meta: 'AccesSOS • Shipped 2023',
+    meta: 'AccesSOS 2023',
     backgroundImage: '/projects/project-3-background.webp',
     mediaOverlayImage: '/projects/project-3-mockup.png',
     overlayAspectRatio: '1312 / 874',
   },
   {
     title: 'Classical Piano Player',
-    meta: 'Cursor • Concept 2026',
+    meta: 'Concept 2026',
     href: 'https://chakdiya.vercel.app/digital-piano',
     size: 'small',
     backgroundVideo: '/projects/piano.mp4',
@@ -53,7 +53,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Digital Bookshelf',
-    meta: 'Cursor • Concept 2026',
+    meta: 'Concept 2026',
     href: 'https://chakdiya.vercel.app/screen-time',
     size: 'small',
     backgroundVideo: '/projects/screen-time-demo.mp4',
