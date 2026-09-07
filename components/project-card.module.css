@@ -107,10 +107,15 @@
   transition: opacity 0.15s ease;
 }
 
-.interactive:hover .title,
-.interactive:focus-visible .title {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+.titleArrow {
+  display: inline-block;
+  margin-left: 4px;
+  transition: transform 0.15s ease;
+}
+
+.interactive:hover .titleArrow,
+.interactive:focus-visible .titleArrow {
+  transform: translateX(4px);
 }
 
 .interactive:focus-visible {

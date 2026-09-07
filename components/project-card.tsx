@@ -68,7 +68,10 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         ) : null}
       </div>
       <div className={styles.text}>
-        <p className={styles.title}>{project.title}</p>
+        <p className={styles.title}>
+          {project.title}
+          {project.href ? <span className={styles.titleArrow}>↗</span> : ""}
+        </p>
         <p className={styles.meta}>{project.meta}</p>
       </div>
     </>
