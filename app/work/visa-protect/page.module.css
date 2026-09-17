@@ -1,0 +1,248 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 24px;
+  width: 100%;
+  padding-inline: max(24px, calc((100% - 640px) / 2));
+  padding-block: clamp(48px, 10vw, 100px);
+}
+
+.back {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text-muted);
+}
+
+.back:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+.h1 {
+  font-size: var(--case-study-h1-size);
+  line-height: var(--case-study-h1-line);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 468px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.heroBackground {
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroMockup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 483px;
+  height: 342px;
+  max-width: 90%;
+  overflow: hidden;
+}
+
+.heroMockup :global(img) {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metaLabel {
+  font-size: 16px;
+  line-height: normal;
+  color: var(--color-text-muted);
+}
+
+.metaValue {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.metaValue p {
+  line-height: 24px;
+}
+
+.dividerWrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+}
+
+.divider {
+  width: 100%;
+  border-top: 0.5px solid var(--color-divider);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.eyebrow {
+  font-size: var(--case-study-eyebrow-size);
+  line-height: normal;
+  color: var(--color-text-muted);
+}
+
+.h2 {
+  font-size: var(--case-study-h2-size);
+  line-height: var(--case-study-h2-line);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.featureImage {
+  background: var(--color-project-surface);
+  width: 100%;
+  padding: 40px 100px;
+}
+
+.featureImageStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.designSystemRow {
+  display: flex;
+  gap: 0;
+}
+
+.designSystemShot {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.designSystemRow .designSystemShot {
+  flex: 1;
+}
+
+.designSystemShot :global(img) {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  font-size: 12px;
+  line-height: normal;
+  color: var(--color-text-muted);
+}
+
+.captionLabel {
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.quoteText {
+  font-size: var(--case-study-h2-size);
+  line-height: var(--case-study-h2-line);
+  font-weight: 600;
+}
+
+.quoteAttribution {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.list {
+  padding-left: 24px;
+  list-style: disc;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statValue {
+  font-size: var(--case-study-h2-size);
+  line-height: var(--case-study-h2-line);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.statLabel {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--color-text);
+}
+
+@media (max-width: 900px) {
+  .featureImage {
+    padding: 24px;
+  }
+
+  .meta,
+  .stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

@@ -68,11 +68,16 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         ) : null}
       </div>
       <div className={styles.text}>
-        <p className={styles.title}>
-          {project.title}
-          {project.href ? <span className={styles.titleArrow}>↗</span> : ""}
-        </p>
-        <p className={styles.meta}>{project.meta}</p>
+        <div className={styles.textHeader}>
+          <p className={styles.title}>
+            {project.title}
+            {project.href ? <span className={styles.titleArrow}>↗</span> : ""}
+          </p>
+          <p className={styles.meta}>{project.meta}</p>
+        </div>
+        {project.description ? (
+          <p className={styles.description}>{project.description}</p>
+        ) : null}
       </div>
     </>
   );
@@ -80,11 +85,13 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const animStyle = { "--i": index } as React.CSSProperties;
 
   if (project.href) {
+    const isExternal = /^https?:\/\//.test(project.href);
     return (
       <a
         className={`${styles.project} ${styles.interactive}`}
         href={project.href}
         style={animStyle}
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
         {body}
       </a>

@@ -18,27 +18,33 @@ export type Project = {
   mediaVideoPoster?: string;
   /** Override the overlay container's aspect-ratio (e.g. "2280 / 1356") */
   overlayAspectRatio?: string;
+  /** Optional secondary line rendered below the title/meta row */
+  description?: string;
 };
 
 export const projects: Project[] = [
   {
-    title: 'Launching Visa’s first GenAI product for clients in 197 countries',
-    meta: 'Visa 2025',
+    title: 'Visa Assist – New User Experience',
+    meta: '2025',
+    description: 'Launching Visa’s first GenAI product for clients in 197 countries',
+    href: 'https://visa-assist-demo.vercel.app/',
     backgroundImage: '/projects/project-1-background.webp',
     mediaOverlayImage: '/projects/visa-assist.webp',
     overlayAspectRatio: '2280 / 1356',
   },
   {
-    title: 'Designing a fraud investigation platform from 0 → 1',
-    meta: 'Visa 2024',
+    title: 'Visa Protect – Design Systems',
+    meta: '2024',
+    description: 'Building a fraud investigation tool 0-1 for small fintechs',
     backgroundImage: '/projects/project-2-background.webp',
     mediaOverlayImage: '/projects/project-2-mockup.png',
     mediaVideo: '/projects/project-2-mockup.mp4',
     mediaVideoPoster: '/projects/project-2-mockup.png',
   },
   {
-    title: 'Accessible text-to-911 redesign that saved 200+ lives',
-    meta: 'AccesSOS 2023',
+    title: 'AccesSOS – Accessible Text-to-911',
+    meta: '2023',
+    description: 'Redesigning emergency reporting that saved 200+ lives across 7 states',
     backgroundImage: '/projects/project-3-background.webp',
     mediaOverlayImage: '/projects/project-3-mockup.png',
     overlayAspectRatio: '1312 / 874',
