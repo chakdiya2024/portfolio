@@ -10,6 +10,7 @@
 }
 
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-project);
@@ -83,6 +84,42 @@
   );
 }
 
+.mediaPauseToggle {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: transparent;
+  color: var(--color-bg);
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.45));
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.mediaPauseToggle:hover,
+.mediaPauseToggle:focus-visible {
+  background: color-mix(in srgb, var(--color-text) 27.5%, transparent);
+}
+
+.mediaPauseToggle:focus-visible {
+  outline: 2px solid var(--color-bg);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mediaPauseToggle {
+    transition: none;
+  }
+}
+
 .text {
   display: flex;
   flex-direction: column;
@@ -108,6 +145,21 @@
   line-height: normal;
 }
 
+.titleLink {
+  position: relative;
+}
+
+.titleLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.titleLink:focus-visible {
+  outline: none;
+}
+
 .text:has(.description) .title {
   font-weight: 600;
 }
@@ -122,6 +174,7 @@
   color: var(--color-text);
   width: 100%;
   line-height: normal;
+  text-wrap: pretty;
 }
 
 .interactive {
@@ -131,16 +184,24 @@
 
 .titleArrow {
   display: inline-block;
-  margin-left: 4px;
+  margin-inline-start: 4px;
   transition: transform 0.15s ease;
 }
 
 .interactive:hover .titleArrow,
-.interactive:focus-visible .titleArrow {
+.interactive:focus-visible .titleArrow,
+.interactive:has(.titleLink:focus-visible) .titleArrow {
   transform: translateX(4px);
 }
 
-.interactive:focus-visible {
+.interactive:focus-visible,
+.interactive:has(.titleLink:focus-visible) {
   outline: 2px solid var(--color-text);
   outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project {
+    animation: none;
+  }
 }

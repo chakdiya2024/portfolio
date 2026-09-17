@@ -41,34 +41,39 @@ export function SocialLinks() {
   };
 
   return (
-    <ul className={styles.list}>
-      {socialLinks.map((item) => (
-        <li key={item.platform}>
-          <a
-            className={`${styles.link} ${
-              item.platform === "email" && copied ? styles.copied : ""
-            }`}
-            href={item.href}
-            aria-label={item.ariaLabel}
-            {...(item.tooltip
-              ? {
-                  "data-tooltip":
-                    item.platform === "email" && copied
-                      ? "Copied!"
-                      : item.tooltip,
-                }
-              : {})}
-            {...(item.platform === "email"
-              ? { onClick: (event) => handleEmailClick(event, item.href) }
-              : { target: "_blank", rel: "noopener noreferrer" })}
-          >
-            <SocialIcon
-              platform={item.platform}
-              copied={item.platform === "email" && copied}
-            />
-          </a>
-        </li>
-      ))}
-    </ul>
+    <>
+      <span className={styles.srOnly} role="status" aria-live="polite">
+        {copied ? "Email copied to clipboard" : ""}
+      </span>
+      <ul className={styles.list}>
+        {socialLinks.map((item) => (
+          <li key={item.platform}>
+            <a
+              className={`${styles.link} ${
+                item.platform === "email" && copied ? styles.copied : ""
+              }`}
+              href={item.href}
+              aria-label={item.ariaLabel}
+              {...(item.tooltip
+                ? {
+                    "data-tooltip":
+                      item.platform === "email" && copied
+                        ? "Copied!"
+                        : item.tooltip,
+                  }
+                : {})}
+              {...(item.platform === "email"
+                ? { onClick: (event) => handleEmailClick(event, item.href) }
+                : { target: "_blank", rel: "noopener noreferrer" })}
+            >
+              <SocialIcon
+                platform={item.platform}
+                copied={item.platform === "email" && copied}
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }

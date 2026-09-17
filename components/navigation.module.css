@@ -74,6 +74,7 @@
   font-weight: 400;
   line-height: normal;
   color: var(--color-text);
+  text-wrap: balance;
 }
 
 .bio {
@@ -106,5 +107,11 @@
 
   .hero {
     max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav {
+    animation: none;
   }
 }
