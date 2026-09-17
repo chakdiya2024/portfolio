@@ -10,7 +10,7 @@
 
 .back {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5625;
   color: var(--color-text-muted);
 }
 
@@ -31,7 +31,7 @@
   flex-direction: column;
   gap: 16px;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5625;
   color: var(--color-text);
 }
 
@@ -80,18 +80,18 @@
 
 .metaLabel {
   font-size: 16px;
-  line-height: normal;
+  line-height: 1.5625;
   color: var(--color-text-muted);
 }
 
 .metaValue {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5625;
   color: var(--color-text);
 }
 
 .metaValue p {
-  line-height: 24px;
+  line-height: 1.5625;
 }
 
 .dividerWrap {
@@ -112,7 +112,7 @@
   gap: 12px;
   width: 100%;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5625;
   color: var(--color-text);
 }
 
@@ -197,14 +197,14 @@
 
 .quoteAttribution {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5625;
 }
 
 .list {
   padding-left: 24px;
   list-style: disc;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5625;
   color: var(--color-text);
 }
 
@@ -231,7 +231,7 @@
 
 .statLabel {
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5625;
   color: var(--color-text);
 }
 

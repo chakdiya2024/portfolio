@@ -62,7 +62,10 @@ export function SocialLinks() {
               ? { onClick: (event) => handleEmailClick(event, item.href) }
               : { target: "_blank", rel: "noopener noreferrer" })}
           >
-            <SocialIcon platform={item.platform} />
+            <SocialIcon
+              platform={item.platform}
+              copied={item.platform === "email" && copied}
+            />
           </a>
         </li>
       ))}

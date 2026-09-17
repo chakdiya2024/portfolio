@@ -19,11 +19,17 @@ export function Navigation() {
         <div className={styles.text}>
           <h1 className={styles.name}>Diya Chakraborti</h1>
           <p className={styles.bio}>
-            Product designer at Visa building enterprise AI tools for trust,
-            at scale. Previously at Change.org, Planned Parenthood, and UC
-            Berkeley.
+            Product designer building enterprise AI tools for trust, at
+            scale. I love turning complex problems into thoughtful
+            solutions—from pitch to production.
+          </p>
+          <p className={styles.status}>
+            Currently at Visa in San Francisco.
+            <br />
+            Learn more about me, or say hello below.
           </p>
         </div>
+        <hr className={styles.divider} />
         <SocialLinks />
       </div>
     </aside>

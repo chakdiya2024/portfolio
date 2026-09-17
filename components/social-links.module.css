@@ -12,13 +12,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 32px;
-  padding: 8px 12px;
-  border-radius: 30px;
-  background: var(--color-social-pill);
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
   color: var(--color-text);
-  transition: background 0.15s ease;
+  transition:
+    background 0.15s ease,
+    scale 0.15s ease-out;
   overflow: visible;
 }
 
@@ -59,13 +61,26 @@
   }
 }
 
-.link:hover {
-  background: var(--color-social-pill-hover);
+@media (hover: hover) and (pointer: fine) {
+  .link:hover {
+    background: var(--color-social-pill);
+  }
+}
+
+.link:active {
+  scale: 0.96;
 }
 
 .link:focus-visible {
+  background: var(--color-social-pill);
   outline: 2px solid var(--color-text);
   outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
 }
 
 .link svg,
