@@ -28,9 +28,7 @@ export function AboutSidebar() {
             />
           </Link>
           <h1 className={styles.heading}>
-            Diya Chakraborti is
-            <br />
-            a designer, dreamer, and doer in SF ☻
+            Diya is a designer, dreamer, and doer ☻
           </h1>
         </div>
 
