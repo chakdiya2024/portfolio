@@ -45,7 +45,7 @@ export const projects: Project[] = [
   {
     title: 'AccesSOS – Accessible Text-to-911',
     meta: '2023',
-    description: 'Redesigning emergency reporting that saved 200+ lives across 7 states',
+    description: 'Redesigning emergency reporting to save 200+ lives across 7 states',
     backgroundImage: '/projects/project-3-background.webp',
     mediaOverlayImage: '/projects/project-3-mockup.png',
     overlayAspectRatio: '1312 / 874',

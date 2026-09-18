@@ -21,12 +21,12 @@ export function Navigation() {
           <p className={styles.bio}>
             Product designer building enterprise AI tools for trust, at
             scale. I love turning complex problems into thoughtful
-            solutions—from pitch to production.
+            solutions, from pitch to production.
           </p>
           <p className={styles.status}>
             Currently at Visa in San Francisco.
             <br />
-            Learn more about me, or say hello below.
+            Learn more about me, or find me below.
           </p>
         </div>
         <hr className={styles.divider} />
