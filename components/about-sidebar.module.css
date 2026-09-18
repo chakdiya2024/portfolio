@@ -1,4 +1,16 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .sidebar {
+  animation: fadeIn 0.5s ease both;
   position: sticky;
   top: 0;
   align-self: flex-start;
@@ -115,6 +127,12 @@
 .experienceYears {
   flex-shrink: 0;
   color: var(--about-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar {
+    animation: none;
+  }
 }
 
 @media (max-width: 900px) {

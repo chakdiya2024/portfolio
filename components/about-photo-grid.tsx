@@ -30,7 +30,12 @@ export function AboutPhotoGrid() {
   return (
     <div className={styles.grid}>
       {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className={styles.row} data-row={rowIndex}>
+        <div
+          key={rowIndex}
+          className={styles.row}
+          data-row={rowIndex}
+          style={{ "--i": rowIndex } as React.CSSProperties}
+        >
           {row.map((photo, photoIndex) => (
             <div key={photo.src} className={styles.tile} data-tile={photoIndex}>
               <Image
