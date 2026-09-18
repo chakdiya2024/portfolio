@@ -9,20 +9,20 @@ type Photo = {
 
 const rows: Photo[][] = [
   [
-    { src: "/about/img-8957.webp", width: 1400, height: 1400 },
-    { src: "/about/img-8964.webp", width: 1080, height: 1400 },
-    { src: "/about/img-8966.webp", width: 1060, height: 1400 },
+    { src: "/about/img-8957.webp", width: 520, height: 689 },
+    { src: "/about/img-8964.webp", width: 536, height: 689 },
+    { src: "/about/img-8966.webp", width: 920, height: 690 },
   ],
   [
-    { src: "/about/img-000022350012-10.webp", width: 1400, height: 928 },
-    { src: "/about/img-8960.webp", width: 1170, height: 764 },
-    { src: "/about/img-8970.webp", width: 808, height: 1024 },
+    { src: "/about/img-000022350012-10.webp", width: 520, height: 724 },
+    { src: "/about/img-8960.webp", width: 982, height: 726 },
+    { src: "/about/img-8970.webp", width: 474, height: 726 },
   ],
   [
-    { src: "/about/img-diya-3.webp", width: 1400, height: 1400 },
-    { src: "/about/img-5994.webp", width: 683, height: 1024 },
-    { src: "/about/img-5993.webp", width: 683, height: 1024 },
-    { src: "/about/img-2366.webp", width: 768, height: 1024 },
+    { src: "/about/img-diya-3.webp", width: 520, height: 626 },
+    { src: "/about/img-5994.webp", width: 475, height: 628 },
+    { src: "/about/img-5993.webp", width: 475, height: 628 },
+    { src: "/about/img-2366.webp", width: 475, height: 628 },
   ],
 ];
 
