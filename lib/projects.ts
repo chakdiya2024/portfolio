@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     title: 'Visa Protect – Fraud Investigation Tool',
     meta: '2024',
-    description: 'Designed the graph interface from 0-1 for small fintechs, now piloting in 6 countries',
+    description: 'Designing the graph interface from 0-1, now piloting to small fintechs in 6 countries',
     href: 'https://visa-protect-demo.vercel.app/',
     backgroundImage: '/projects/project-2-background.webp',
     mediaOverlayImage: '/projects/project-2-mockup.png',
