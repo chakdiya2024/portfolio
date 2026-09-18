@@ -24,9 +24,9 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'Visa Assist – New User Experience',
+    title: 'Visa Assist – GenAI Research Assistant',
     meta: '2025',
-    description: 'Launching Visa’s first GenAI product for clients in 197 countries',
+    description: 'Launching Visa’s first GenAI product for clients and employees in 197 countries',
     href: 'https://visa-assist-demo.vercel.app/',
     backgroundImage: '/projects/project-1-background.webp',
     mediaOverlayImage: '/projects/visa-assist.webp',
