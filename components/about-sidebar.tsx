@@ -42,10 +42,9 @@ export function AboutSidebar() {
             UC Berkeley’s School of Information.
           </p>
           <p>
-            As a dreamer, I’m a strong advocate for social mobility. Since
-            2020, I’ve cherished my time mentoring high school students to
-            their dream colleges, and advising student designers to their
-            dream internships.
+            As a dreamer, I’m passionate about social mobility. Since 2020,
+            I’ve been mentoring high school students to their dream colleges,
+            and advising student designers to their dream internships.
           </p>
           <div>
             <p>As a doer, you can find me...</p>
