@@ -10,8 +10,8 @@ type ProjectCardProps = {
 };
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
-  const hasInteractiveMedia = Boolean(project.backgroundVideo || project.mediaVideo);
   const isExternal = project.href ? /^https?:\/\//.test(project.href) : false;
+  const linkAttrs = isExternal ? { target: "_blank" as const, rel: "noopener noreferrer" } : {};
 
   const media = (
     <div
@@ -69,6 +69,15 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           />
         </div>
       ) : null}
+      {project.href ? (
+        <a
+          className={styles.mediaLink}
+          href={project.href}
+          aria-hidden="true"
+          tabIndex={-1}
+          {...linkAttrs}
+        />
+      ) : null}
     </div>
   );
 
@@ -83,12 +92,8 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
     <div className={styles.text}>
       <div className={styles.textHeader}>
         <p className={styles.title}>
-          {project.href && hasInteractiveMedia ? (
-            <a
-              className={styles.titleLink}
-              href={project.href}
-              {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-            >
+          {project.href ? (
+            <a className={styles.titleLink} href={project.href} {...linkAttrs}>
               {titleContent}
             </a>
           ) : (
@@ -105,34 +110,15 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
   const animStyle = { "--i": index } as React.CSSProperties;
 
-  if (project.href && hasInteractiveMedia) {
-    // Video needs a real, focusable pause button, which can't nest inside an
-    // <a> — so the link covers the card via a stretched pseudo-element
-    // instead of wrapping it.
-    return (
-      <article className={`${styles.project} ${styles.interactive}`} style={animStyle}>
-        {media}
-        {text}
-      </article>
-    );
-  }
-
-  if (project.href) {
-    return (
-      <a
-        className={`${styles.project} ${styles.interactive}`}
-        href={project.href}
-        style={animStyle}
-        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      >
-        {media}
-        {text}
-      </a>
-    );
-  }
-
+  // Thumbnail and title are both clickable (via their own anchors, since a
+  // video's focusable pause button can't nest inside a wrapping <a>);
+  // description and year stay plain text so they remain selectable and
+  // aren't swallowed into the link for screen readers.
   return (
-    <article className={styles.project} style={animStyle}>
+    <article
+      className={[styles.project, project.href ? styles.interactive : ""].filter(Boolean).join(" ")}
+      style={animStyle}
+    >
       {media}
       {text}
     </article>
