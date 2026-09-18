@@ -1,0 +1,73 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.tile {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--about-photo-border);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Row 1 — 260px fixed, flexible, 460px fixed */
+.row[data-row="0"] {
+  height: 344px;
+}
+
+.row[data-row="0"] .tile[data-tile="0"] {
+  flex: 0 0 260px;
+}
+
+.row[data-row="0"] .tile[data-tile="2"] {
+  flex: 0 0 460px;
+}
+
+/* Row 2 — 260px fixed, wide flexible, flexible */
+.row[data-row="1"] {
+  height: 363px;
+}
+
+.row[data-row="1"] .tile[data-tile="0"] {
+  flex: 0 0 260px;
+}
+
+.row[data-row="1"] .tile[data-tile="1"] {
+  flex: 1.3 1 0;
+}
+
+/* Row 3 — 260px fixed, three equal flexible columns */
+.row[data-row="2"] {
+  height: 314px;
+}
+
+.row[data-row="2"] .tile[data-tile="0"] {
+  flex: 0 0 260px;
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+    height: auto !important;
+  }
+
+  .row .tile {
+    flex: none !important;
+    width: 100%;
+    height: 300px;
+  }
+}

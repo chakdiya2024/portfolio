@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SocialLinks } from "@/components/social-links";
 import styles from "./navigation.module.css";
 
@@ -26,7 +27,11 @@ export function Navigation() {
           <p className={styles.status}>
             Currently at Visa in San Francisco.
             <br />
-            Learn more about me, or find me below.
+            Learn more{" "}
+            <Link href="/about" className={styles.aboutLink}>
+              about me
+            </Link>
+            , or find me below.
           </p>
         </div>
         <hr className={styles.divider} />

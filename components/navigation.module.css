@@ -68,6 +68,11 @@
   color: var(--color-text);
 }
 
+.aboutLink {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .name {
   font-family: var(--font-display);
   font-size: 28px;
