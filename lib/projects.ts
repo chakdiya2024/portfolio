@@ -26,8 +26,7 @@ export const projects: Project[] = [
   {
     title: 'Visa Assist – GenAI Research Assistant',
     meta: '2025',
-    description: 'Launched Visa’s first GenAI product for clients and employees in 197 countries',
-    href: 'https://visa-assist-demo.vercel.app/',
+    description: 'Launched Visa’s first AI product for clients in 197 countries',
     backgroundImage: '/projects/project-1-background.webp',
     mediaOverlayImage: '/projects/visa-assist.webp',
     overlayAspectRatio: '2280 / 1356',
@@ -35,8 +34,7 @@ export const projects: Project[] = [
   {
     title: 'Visa Protect – Fraud Investigation Tool',
     meta: '2024',
-    description: 'Designed graph interface from 0-1, now piloting to small fintechs in 6 countries',
-    href: 'https://visa-protect-demo.vercel.app/',
+    description: 'Designed 0-1 graph interface, now piloting to small fintechs in 6 countries',
     backgroundImage: '/projects/project-2-background.webp',
     mediaOverlayImage: '/projects/project-2-mockup.png',
     mediaVideo: '/projects/project-2-mockup.mp4',
