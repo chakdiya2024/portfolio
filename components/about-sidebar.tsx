@@ -35,14 +35,14 @@ export function AboutSidebar() {
         <div className={styles.bio}>
           <p>
             As a designer, I love creating meaningful experiences that help
-            real people. I’ve previously designed at mission-driven places
-            like Visa, Change.org, Planned Parenthood, Develop for Good, and
-            UC Berkeley’s School of Information.
+            real people. I’ve worked at and with mission-driven places like
+            Visa, Change.org, Planned Parenthood, Develop for Good, and UC
+            Berkeley’s School of Information.
           </p>
           <p>
             As a dreamer, I’m passionate about social mobility. Since 2020,
-            I’ve been mentoring high school students to their dream colleges,
-            and advising student designers to their dream internships.
+            I’ve mentored high school students toward their dream
+            universities and junior designers to their dream roles in tech.
           </p>
           <div>
             <p>As a doer, you can find me...</p>
