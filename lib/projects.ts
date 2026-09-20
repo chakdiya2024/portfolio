@@ -26,7 +26,7 @@ export const projects: Project[] = [
   {
     title: 'Visa Assist – GenAI Research Assistant',
     meta: '2025',
-    description: 'Launched Visa’s first AI product for clients in 197 countries',
+    description: 'Designed a simplified new UX for Visa’s first AI product serving 450K+ clients worldwide',
     backgroundImage: '/projects/project-1-background.webp',
     mediaOverlayImage: '/projects/visa-assist.webp',
     overlayAspectRatio: '2280 / 1356',
@@ -34,7 +34,7 @@ export const projects: Project[] = [
   {
     title: 'Visa Protect – Fraud Investigation Tool',
     meta: '2024',
-    description: 'Designed 0-1 graph interface, now piloting to small fintechs in 6 countries',
+    description: 'Designed a 0-1 interface for small fraud teams to navigate complex transaction networks',
     backgroundImage: '/projects/project-2-background.webp',
     mediaOverlayImage: '/projects/project-2-mockup.png',
     mediaVideo: '/projects/project-2-mockup.mp4',
