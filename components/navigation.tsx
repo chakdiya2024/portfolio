@@ -20,9 +20,9 @@ export function Navigation() {
         <div className={styles.text}>
           <h1 className={styles.name}>Diya Chakraborti</h1>
           <p className={styles.bio}>
-            Product designer building enterprise AI tools for trust, at
-            scale. I love turning complex problems into thoughtful
-            solutions, from pitch to production.
+            Product designer building AI tools for trust, at scale. I
+            love turning complex problems into thoughtful solutions,
+            from pitch to production.
           </p>
           <p className={styles.status}>
             Currently at Visa in San Francisco.

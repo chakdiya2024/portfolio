@@ -6,7 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Diya Chakraborti — Product Designer",
   description:
-    "Product designer at Visa building enterprise AI tools for trust, at scale. Previously at Change.org, Planned Parenthood, and UC Berkeley.",
+    "Product designer at Visa building AI tools for trust, at scale. Previously at Change.org, Planned Parenthood, and UC Berkeley.",
 };
 
 export default function RootLayout({
