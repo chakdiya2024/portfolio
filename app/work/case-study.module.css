@@ -1,0 +1,342 @@
+.page {
+  --gutter: 40px;
+  --column-width: 640px;
+  --wide-width: 1040px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+  padding: 100px 0 200px;
+  position: relative;
+  background: var(--color-bg);
+  word-break: break-word;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: min(var(--column-width), 100% - 2 * var(--gutter));
+}
+
+.back {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: var(--z-fixed);
+  padding: 14px 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-caption);
+  transition: color 0.15s ease-out, text-shadow 0.15s ease-out, scale 0.15s ease-out;
+}
+
+.back:active {
+  scale: 0.96;
+}
+
+/* While a dark image scrolls beneath the link: light text, with a soft
+   shadow so it also holds up over the image's bright patches. */
+.backOnDark {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 0 14px rgba(0, 0, 0, 0.55);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back:hover {
+    color: var(--color-text);
+  }
+
+  .backOnDark:hover {
+    color: #fff;
+  }
+}
+
+.back:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: -6px;
+}
+
+.backOnDark:focus-visible {
+  outline-color: #fff;
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-caption);
+}
+
+.h1,
+.h2,
+.h3 {
+  font-weight: 600;
+  line-height: normal;
+  color: var(--color-text);
+}
+
+.h1 {
+  font-size: 40px;
+}
+
+.h2 {
+  font-size: 28px;
+}
+
+.h3 {
+  font-size: 20px;
+}
+
+.body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--color-text-body);
+  text-wrap: pretty;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.details,
+.columns {
+  display: flex;
+  gap: 32px;
+}
+
+.details > *,
+.columns > * {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 80px var(--gutter);
+}
+
+.backdrop {
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+.heroVideo {
+  position: relative;
+  display: block;
+  width: min(var(--column-width), 100%);
+  aspect-ratio: 1880 / 1500;
+  border-radius: 12px;
+  box-shadow: var(--shadow-large);
+}
+
+.logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 0 40px;
+  background: var(--color-surface-tint);
+}
+
+.logos img {
+  width: 100%;
+  height: auto;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.divider {
+  flex-shrink: 0;
+  width: min(var(--column-width), 100% - 2 * var(--gutter));
+  margin: 20px 0;
+  border: none;
+  border-top: 0.5px solid var(--color-divider);
+}
+
+.band {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 80px 100px;
+  background: var(--color-surface-tint);
+}
+
+.bandInner {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 1240px;
+}
+
+.bandFigure {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.bandMedia {
+  width: 100%;
+}
+
+.bandMedia img {
+  border: 1px solid var(--color-border);
+}
+
+.frames {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: min(var(--wide-width), 100% - 2 * var(--gutter));
+}
+
+.frameFigure {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 60px 40px;
+}
+
+.frameMedia {
+  position: relative;
+  width: min(var(--column-width), 100%);
+}
+
+.shadow {
+  box-shadow: var(--shadow-large);
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 640 / 470;
+  object-fit: cover;
+  object-position: bottom;
+}
+
+@media (max-width: 1100px) {
+  .band {
+    padding: 64px var(--gutter);
+  }
+}
+
+@media (max-width: 700px) {
+  .page {
+    --gutter: 20px;
+    gap: 48px;
+    padding: 88px 0 96px;
+  }
+
+  /* Scrolls away with the page; its text lines up with the column */
+  .back {
+    position: absolute;
+    top: 20px;
+    left: calc(var(--gutter) - 16px);
+  }
+
+  .h1,
+  .h2,
+  .h3 {
+    text-wrap: balance;
+  }
+
+  .h1 {
+    font-size: 32px;
+  }
+
+  .h2 {
+    font-size: 24px;
+  }
+
+  .details,
+  .columns {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .hero {
+    padding: 40px var(--gutter);
+  }
+
+  .logos {
+    height: auto;
+    padding: 24px;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 24px;
+  }
+
+  .band {
+    padding: 40px var(--gutter);
+  }
+
+  .bandInner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .frames {
+    width: 100%;
+  }
+
+  .frame {
+    padding: 32px var(--gutter);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back {
+    transition: none;
+  }
+}

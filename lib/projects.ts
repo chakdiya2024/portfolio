@@ -26,6 +26,7 @@ export const projects: Project[] = [
   {
     title: 'Visa Assist – GenAI Research Assistant',
     meta: '2025',
+    href: '/work/visa-assist',
     description: 'Designed a simplified UX for Visa’s first AI product serving 450K+ clients worldwide',
     backgroundImage: '/projects/project-1-background.webp',
     mediaOverlayImage: '/projects/visa-assist.webp',

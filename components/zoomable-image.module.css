@@ -1,0 +1,143 @@
+.trigger {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: zoom-in;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 4px;
+}
+
+/* Shows the image can be enlarged: always visible on touch, on hover or
+   keyboard focus where there is a pointer. */
+.hint {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(12, 12, 12, 0.6);
+  color: #fff;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out;
+}
+
+.hint[data-open] {
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hint {
+    opacity: 0;
+  }
+
+  .trigger:hover .hint:not([data-open]),
+  .trigger:focus-visible .hint:not([data-open]) {
+    opacity: 1;
+  }
+}
+
+.media {
+  width: 100%;
+}
+
+.media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: zoom-out;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 12, 12, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* As wide as fits: capped by the viewport width, by the viewport height
+   (leaving room for the caption), and by a sensible maximum. */
+.zoomed {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(100%, (100dvh - 120px) * var(--ratio), 1600px);
+}
+
+.zoomedCaption {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: background 0.15s ease-out, scale 0.15s ease-out;
+}
+
+.close:active {
+  scale: 0.96;
+}
+
+.close:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .close:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+}
+
+@media (max-width: 700px) {
+  .overlay {
+    padding: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .close,
+  .hint {
+    transition: none;
+  }
+}

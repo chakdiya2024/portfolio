@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Project } from "@/lib/projects";
 import { PausableVideo } from "./pausable-video";
 import { OverlayVideo } from "./overlay-video";
@@ -70,7 +71,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
       ) : null}
       {project.href ? (
-        <a
+        <Link
           className={styles.mediaLink}
           href={project.href}
           aria-hidden="true"
@@ -84,7 +85,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const titleContent = (
     <>
       {project.title}
-      {project.href ? <span className={styles.titleArrow}>↗</span> : ""}
+      {project.href ? <span className={styles.titleArrow}>{isExternal ? "↗" : "→"}</span> : ""}
     </>
   );
 
@@ -93,9 +94,9 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       <div className={styles.textHeader}>
         <p className={styles.title}>
           {project.href ? (
-            <a className={styles.titleLink} href={project.href} {...linkAttrs}>
+            <Link className={styles.titleLink} href={project.href} {...linkAttrs}>
               {titleContent}
-            </a>
+            </Link>
           ) : (
             titleContent
           )}
