@@ -57,7 +57,15 @@
   aspect-ratio: var(--overlay-aspect-ratio, 573 / 406);
   transform: translate(-50%, -50%);
   border-radius: 8px;
+  box-shadow: var(--shadow-large);
   overflow: hidden;
+}
+
+/* A transparent mockup: the shadow follows the artwork, not the box.
+   Approximates --shadow-large, which drop-shadow can't take directly. */
+.mediaOverlayCutout {
+  box-shadow: none;
+  filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 10px 8px rgba(0, 0, 0, 0.1));
 }
 
 .mediaOverlayAsset {
@@ -70,18 +78,10 @@
   border-radius: 8px;
 }
 
+/* Scaled up so the overlay box clips the recording's stray edge pixels and
+   its shadow sits flush against the visible frame. */
 .mediaOverlayVideo {
-  --crop-top: 2px;
-  --crop-right: 3px;
-  --crop-bottom: 2px;
-  --crop-left: 4px;
-  clip-path: inset(
-    var(--crop-top)
-    var(--crop-right)
-    var(--crop-bottom)
-    var(--crop-left)
-    round 8px
-  );
+  scale: 1.02;
 }
 
 .mediaPauseToggle {

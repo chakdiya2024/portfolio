@@ -56,7 +56,11 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         />
       ) : project.mediaOverlayImage ? (
         <div
-          className={styles.mediaOverlay}
+          className={
+            project.overlayCutout
+              ? `${styles.mediaOverlay} ${styles.mediaOverlayCutout}`
+              : styles.mediaOverlay
+          }
           style={project.overlayAspectRatio ? { "--overlay-aspect-ratio": project.overlayAspectRatio } as React.CSSProperties : undefined}
         >
           <Image

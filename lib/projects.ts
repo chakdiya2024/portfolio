@@ -18,6 +18,8 @@ export type Project = {
   mediaVideoPoster?: string;
   /** Override the overlay container's aspect-ratio (e.g. "2280 / 1356") */
   overlayAspectRatio?: string;
+  /** The overlay image has a transparent background, so its shadow follows the artwork */
+  overlayCutout?: boolean;
   /** Optional secondary line rendered below the title/meta row */
   description?: string;
 };
@@ -29,8 +31,8 @@ export const projects: Project[] = [
     href: '/work/visa-assist',
     description: 'Led the redesign of Visa’s first GenAI product for clients, now live in 197 countries',
     backgroundImage: '/projects/project-1-background.webp',
-    mediaOverlayImage: '/projects/visa-assist.webp',
-    overlayAspectRatio: '2280 / 1356',
+    mediaOverlayImage: '/work/visa-assist/va-home.webp',
+    overlayAspectRatio: '2880 / 1800',
   },
   {
     title: 'Visa Protect – Fraud Investigation Tool',
@@ -50,6 +52,7 @@ export const projects: Project[] = [
     backgroundImage: '/projects/project-3-background.webp',
     mediaOverlayImage: '/projects/project-3-mockup.png',
     overlayAspectRatio: '1312 / 874',
+    overlayCutout: true,
   },
   {
     title: 'Classical Piano Player',
