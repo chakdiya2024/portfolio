@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { BackLink } from "@/components/back-link";
 import { CaseStudyVideo } from "@/components/case-study-video";
+import { EdgeBlur } from "@/components/edge-blur";
 import { PageEnter } from "@/components/page-enter";
 import { Reveal } from "@/components/reveal";
 import { ZoomableImage } from "@/components/zoomable-image";
@@ -31,6 +32,7 @@ const metrics = [
 export default function VisaAssist() {
   return (
     <main className={styles.page}>
+      <EdgeBlur />
       <BackLink href="/" className={styles.back} onDarkClassName={styles.backOnDark}>
         ← Back
       </BackLink>

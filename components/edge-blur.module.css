@@ -1,0 +1,87 @@
+/* Pages can set these on an ancestor:
+   --edge-left         where the bands start, e.g. past a sidebar (default 0)
+   --edge-tint         the background colour they tint towards (default page bg)
+   --edge-top-display  none to drop the top band (default block) */
+.edge {
+  --edge-blur: 8px;
+  --tint: var(--edge-tint, var(--color-bg));
+
+  position: fixed;
+  left: var(--edge-left, 0px);
+  right: 0;
+  z-index: var(--z-edge);
+  height: 56px;
+  pointer-events: none;
+}
+
+.top {
+  top: 0;
+  display: var(--edge-top-display, block);
+  --to: to bottom;
+}
+
+.bottom {
+  bottom: 0;
+  --to: to top;
+}
+
+.edge > * {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.top > * {
+  top: 0;
+}
+
+.bottom > * {
+  bottom: 0;
+}
+
+/* Progressive blur: three stacked layers, strongest nearest the edge, each
+   masked so it dissolves instead of ending on a line. */
+.blur {
+  -webkit-mask-image: linear-gradient(var(--to), black, transparent);
+  mask-image: linear-gradient(var(--to), black, transparent);
+}
+
+.blurWide {
+  height: 100%;
+  -webkit-backdrop-filter: blur(calc(var(--edge-blur) / 4));
+  backdrop-filter: blur(calc(var(--edge-blur) / 4));
+}
+
+.blurMid {
+  height: 66%;
+  -webkit-backdrop-filter: blur(calc(var(--edge-blur) / 2));
+  backdrop-filter: blur(calc(var(--edge-blur) / 2));
+}
+
+.blurNear {
+  height: 33%;
+  -webkit-backdrop-filter: blur(var(--edge-blur));
+  backdrop-filter: blur(var(--edge-blur));
+}
+
+/* A light tint of the page background, with eased stops to avoid banding. */
+.fade {
+  height: 100%;
+  opacity: 0.3;
+  background: linear-gradient(
+    var(--to),
+    var(--tint) 0%,
+    color-mix(in srgb, var(--tint) 73.8%, transparent) 19%,
+    color-mix(in srgb, var(--tint) 54.1%, transparent) 34%,
+    color-mix(in srgb, var(--tint) 38.2%, transparent) 47%,
+    color-mix(in srgb, var(--tint) 27.8%, transparent) 56.5%,
+    color-mix(in srgb, var(--tint) 19.4%, transparent) 65%,
+    color-mix(in srgb, var(--tint) 12.6%, transparent) 73%,
+    color-mix(in srgb, var(--tint) 7.5%, transparent) 80.2%,
+    color-mix(in srgb, var(--tint) 4.2%, transparent) 86.1%,
+    color-mix(in srgb, var(--tint) 2.1%, transparent) 91%,
+    color-mix(in srgb, var(--tint) 0.8%, transparent) 95.2%,
+    color-mix(in srgb, var(--tint) 0.2%, transparent) 98.2%,
+    transparent 100%
+  );
+}

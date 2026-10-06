@@ -1,3 +1,4 @@
+import { EdgeBlur } from "@/components/edge-blur";
 import { Navigation } from "@/components/navigation";
 import { ProjectCard } from "@/components/project-card";
 import { projects, type Project } from "@/lib/projects";
@@ -25,6 +26,7 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
+      <EdgeBlur />
       <Navigation />
       <main className={styles.content}>
         {rows.map((row, i) =>

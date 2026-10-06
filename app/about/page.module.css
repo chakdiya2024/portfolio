@@ -3,6 +3,9 @@
   --about-text: #f4f3ed;
   --about-text-muted: #bbbbbb;
   --about-photo-border: rgba(0, 0, 0, 0.1);
+  /* Edge blur covers the scrolling column only, and tints towards the dark background */
+  --edge-left: var(--nav-width);
+  --edge-tint: var(--about-bg);
 
   display: flex;
   align-items: stretch;
@@ -24,6 +27,10 @@
 
 @media (max-width: 900px) {
   .about {
+    /* The intro sticks to the top here, so only the bottom edge is softened */
+    --edge-left: 0px;
+    --edge-top-display: none;
+
     flex-direction: column;
     height: auto;
     min-height: 100vh;

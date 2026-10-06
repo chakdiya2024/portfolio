@@ -1,4 +1,7 @@
 .home {
+  /* Edge blur covers the scrolling column only, not the sidebar */
+  --edge-left: var(--nav-width);
+
   display: flex;
   align-items: stretch;
   width: 100%;
@@ -31,6 +34,10 @@
 
 @media (max-width: 900px) {
   .home {
+    /* The intro sticks to the top here, so only the bottom edge is softened */
+    --edge-left: 0px;
+    --edge-top-display: none;
+
     flex-direction: column;
     height: auto;
     min-height: 100vh;
