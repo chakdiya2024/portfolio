@@ -85,7 +85,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const titleContent = (
     <>
       {project.title}
-      {project.href ? <span className={styles.titleArrow}>{isExternal ? "↗" : "→"}</span> : ""}
+      {isExternal ? <span className={styles.titleArrow}>↗</span> : ""}
     </>
   );
 

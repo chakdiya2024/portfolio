@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const details = [
   { label: "role", value: "First Product Designer" },
-  { label: "timeline", value: "June – Dec 2025" },
+  { label: "timeline", value: "Jan – June 2025" },
   { label: "team", value: "1 PM, 2 Data Engineers" },
 ];
 
