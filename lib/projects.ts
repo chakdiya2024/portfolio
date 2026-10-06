@@ -35,6 +35,7 @@ export const projects: Project[] = [
   {
     title: 'Visa Protect – Fraud Investigation Tool',
     meta: '2024',
+    href: '/work/visa-protect',
     description: 'Designed a 0-1 interface for small fraud teams to navigate complex transaction networks',
     backgroundImage: '/projects/project-2-background.webp',
     mediaOverlayImage: '/projects/project-2-mockup.png',
@@ -44,6 +45,7 @@ export const projects: Project[] = [
   {
     title: 'AccesSOS – Accessible Text-to-911',
     meta: '2023',
+    href: '/work/accessos',
     description: 'Redesigned emergency reporting to save 200+ lives across 45 states',
     backgroundImage: '/projects/project-3-background.webp',
     mediaOverlayImage: '/projects/project-3-mockup.png',
