@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { BackLink } from "@/components/back-link";
 import { CaseStudyVideo } from "@/components/case-study-video";
+import { PageEnter } from "@/components/page-enter";
 import { Reveal } from "@/components/reveal";
 import { ZoomableImage } from "@/components/zoomable-image";
 import styles from "../case-study.module.css";
@@ -34,7 +35,7 @@ export default function VisaAssist() {
         ← Back
       </BackLink>
 
-      <header className={styles.column}>
+      <PageEnter as="header" className={styles.column}>
         <h1 className={styles.h1}>
           Building trust in Visa’s first GenAI product for clients
         </h1>
@@ -53,9 +54,9 @@ export default function VisaAssist() {
             </div>
           ))}
         </dl>
-      </header>
+      </PageEnter>
 
-      <div className={styles.hero} data-backdrop="dark">
+      <PageEnter className={styles.hero} backdrop="dark" delay={0.3}>
         <Image
           className={styles.backdrop}
           src={`${assets}/background.webp`}
@@ -70,7 +71,7 @@ export default function VisaAssist() {
           src={`${assets}/demo.mp4`}
           poster={`${assets}/demo-poster.webp`}
         />
-      </div>
+      </PageEnter>
 
       <Reveal as="section" className={styles.column}>
         <div className={styles.heading}>
@@ -143,6 +144,7 @@ export default function VisaAssist() {
               width={2524}
               height={1880}
               caption="original home"
+              radius={12}
             />
             <figcaption className={styles.caption}>original home</figcaption>
           </figure>
@@ -154,6 +156,7 @@ export default function VisaAssist() {
               width={2524}
               height={1880}
               caption="original chat"
+              radius={12}
             />
             <figcaption className={styles.caption}>original chat</figcaption>
           </figure>
@@ -189,11 +192,13 @@ export default function VisaAssist() {
             />
             <ZoomableImage
               className={styles.frameMedia}
+              mediaClassName={styles.shadow}
               src={`${assets}/va-home.webp`}
               alt="Redesigned Visa Assist home screen with a personal greeting and six categorized conversation starters"
               width={2880}
               height={1800}
               caption="redesigned home"
+              radius={12}
             />
           </div>
           <figcaption className={styles.caption}>redesigned home</figcaption>
@@ -210,11 +215,13 @@ export default function VisaAssist() {
             />
             <ZoomableImage
               className={styles.frameMedia}
+              mediaClassName={styles.shadow}
               src={`${assets}/va-chat.webp`}
               alt="Redesigned Visa Assist chat screen with a structured, numbered answer followed by source cards"
               width={2880}
               height={1800}
               caption="redesigned chat interface"
+              radius={12}
             />
           </div>
           <figcaption className={styles.caption}>

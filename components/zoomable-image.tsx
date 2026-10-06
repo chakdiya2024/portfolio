@@ -13,6 +13,8 @@ type ZoomableImageProps = {
   width: number;
   height: number;
   caption: string;
+  /** Corner radius in px, kept while the image is enlarged */
+  radius?: number;
   /** Sizes the in-page trigger */
   className?: string;
   /** Styles the image box itself (it travels with the image while zooming) */
@@ -27,6 +29,7 @@ export function ZoomableImage({
   width,
   height,
   caption,
+  radius,
   className,
   mediaClassName,
 }: ZoomableImageProps) {
@@ -76,6 +79,7 @@ export function ZoomableImage({
           layoutId={sharedLayoutId}
           transition={morph}
           className={[styles.media, mediaClassName].filter(Boolean).join(" ")}
+          style={{ borderRadius: radius }}
         >
           <Image src={src} alt={alt} width={width} height={height} unoptimized />
         </motion.div>
@@ -111,6 +115,7 @@ export function ZoomableImage({
                       layoutId={sharedLayoutId}
                       transition={morph}
                       className={styles.media}
+                      style={{ borderRadius: radius }}
                     >
                       <Image src={src} alt={alt} width={width} height={height} unoptimized />
                     </motion.div>
