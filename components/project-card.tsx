@@ -53,6 +53,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           src={project.mediaVideo}
           poster={project.mediaVideoPoster ?? project.mediaOverlayImage}
           overlayAspectRatio={project.overlayAspectRatio}
+          uncropped={project.overlayVideoUncropped}
         />
       ) : project.mediaOverlayImage ? (
         <div

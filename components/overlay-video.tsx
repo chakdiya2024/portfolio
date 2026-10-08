@@ -8,11 +8,12 @@ type OverlayVideoProps = {
   src: string;
   poster?: string;
   overlayAspectRatio?: string;
+  uncropped?: boolean;
 };
 
 // The pause toggle is rendered as a sibling of .mediaOverlay (not a child of
 // it) so it anchors to the full media background, not the smaller mockup box.
-export function OverlayVideo({ src, poster, overlayAspectRatio }: OverlayVideoProps) {
+export function OverlayVideo({ src, poster, overlayAspectRatio, uncropped }: OverlayVideoProps) {
   const { ref, playing, toggle } = usePausableVideo();
 
   return (
@@ -27,7 +28,11 @@ export function OverlayVideo({ src, poster, overlayAspectRatio }: OverlayVideoPr
       >
         <video
           ref={ref}
-          className={`${styles.mediaOverlayAsset} ${styles.mediaOverlayVideo}`}
+          className={
+            uncropped
+              ? styles.mediaOverlayAsset
+              : `${styles.mediaOverlayAsset} ${styles.mediaOverlayVideo}`
+          }
           src={src}
           poster={poster}
           autoPlay

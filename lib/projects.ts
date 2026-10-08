@@ -20,6 +20,8 @@ export type Project = {
   overlayAspectRatio?: string;
   /** The overlay image has a transparent background, so its shadow follows the artwork */
   overlayCutout?: boolean;
+  /** The overlay video has clean edges, so it isn't scaled up to crop them */
+  overlayVideoUncropped?: boolean;
   /** Optional secondary line rendered below the title/meta row */
   description?: string;
 };
@@ -31,8 +33,10 @@ export const projects: Project[] = [
     href: '/work/visa-assist',
     description: 'Led the redesign of Visa’s first GenAI product for clients, now live in 197 countries',
     backgroundImage: '/projects/project-1-background.webp',
-    mediaOverlayImage: '/work/visa-assist/va-home.webp',
+    mediaVideo: '/work/visa-assist/thumbnail.mp4',
+    mediaVideoPoster: '/work/visa-assist/thumbnail-poster.webp',
     overlayAspectRatio: '2880 / 1800',
+    overlayVideoUncropped: true,
   },
   {
     title: 'Visa Protect – Fraud Investigation Tool',
